@@ -128,23 +128,31 @@
 
     <script>
     (function() {
-    var MINS = 10, total = MINS * 60;
-    var stored = sessionStorage.getItem('mm_ds2_timer');
-    var end = stored ? parseInt(stored, 10) : Date.now() + total * 1000;
-    if (!stored) sessionStorage.setItem('mm_ds2_timer', end);
+        var MINS = 5, total = MINS * 60;
+        var KEY = 'mm_upsell_timer_end';
+        var stored = localStorage.getItem(KEY);
+        var end;
 
-    function tick() {
-    var left = Math.max(0, Math.round((end - Date.now()) / 1000));
-    var m = Math.floor(left / 60), s = left % 60;
-    var em = document.getElementById('minutes');
-    var es = document.getElementById('seconds');
-    if (em) em.textContent = String(m).padStart(2, '0');
-    if (es) es.textContent = String(s).padStart(2, '0');
-    if (left > 0) setTimeout(tick, 1000);
-    }
-    tick();
+        if (stored) {
+        end = parseInt(stored, 10);
+        } else {
+        end = Date.now() + total * 1000;
+        localStorage.setItem(KEY, end);
+        }
+
+        function tick() {
+        var left = Math.max(0, Math.round((end - Date.now()) / 1000));
+        var m = Math.floor(left / 60), s = left % 60;
+        var em = document.getElementById('tm');
+        var es = document.getElementById('ts');
+        if (em) em.textContent = String(m).padStart(2, '0');
+        if (es) es.textContent = String(s).padStart(2, '0');
+        if (left > 0) setTimeout(tick, 1000);
+        /* si llegó a 0 se queda en 00:00 y no vuelve a correr */
+        }
+        tick();
     })();
-</script>
+    </script>
 
 
 </body>
