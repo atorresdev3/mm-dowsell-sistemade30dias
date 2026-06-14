@@ -93,22 +93,47 @@
         <div class="ds2-price-note">Esta oferta desaparece cuando cierres esta página. No hay una tercera oportunidad.</div>
     </div>
 
-    <!-- TEMPORIZADOR -->
-    <div class="ds2-timer">
-        <div class="ds2-timer-label">Esta oferta expira en</div>
-        <div class="ds2-timer-display">
-            <div class="ds2-timer-block">
-                <div class="ds2-timer-num" id="minutes">10</div>
-                <div class="ds2-timer-unit">Minutos</div>
-            </div>
-            <div class="ds2-timer-sep">:</div>
-            <div class="ds2-timer-block">
-                <div class="ds2-timer-num" id="seconds">00</div>
-                <div class="ds2-timer-unit">Segundos</div>
-            </div>
+<!-- TEMPORIZADOR -->
+<div class="ds2-timer">
+    <div class="ds2-timer-label">Esta oferta expira en</div>
+    <div class="ds2-timer-display">
+        <div class="ds2-timer-block">
+            <div class="ds2-timer-num" id="minutes">05</div>
+            <div class="ds2-timer-unit">Minutos</div>
         </div>
-        <div class="ds2-timer-note">Una vez que expire no podrás recuperar este precio.</div>
+        <div class="ds2-timer-sep">:</div>
+        <div class="ds2-timer-block">
+            <div class="ds2-timer-num" id="seconds">00</div>
+            <div class="ds2-timer-unit">Segundos</div>
+        </div>
     </div>
+    <div class="ds2-timer-note">Una vez que expire no podrás recuperar este precio.</div>
+</div>
+
+<script>
+(function() {
+    var MINS = 5, total = MINS * 60;
+    var KEY = 'mm_ds2_timer_end';
+    var stored = localStorage.getItem(KEY);
+    var end;
+
+    if (stored) {
+        end = parseInt(stored, 10);
+    } else {
+        end = Date.now() + total * 1000;
+        localStorage.setItem(KEY, end);
+    }
+
+    function tick() {
+        var left = Math.max(0, Math.round((end - Date.now()) / 1000));
+        var m = Math.floor(left / 60), s = left % 60;
+        document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+        if (left > 0) setTimeout(tick, 1000);
+    }
+    tick();
+})();
+</script>
 
 
     <div class="mm-funnel-wrap">
@@ -126,33 +151,7 @@
 
 
 
-    <script>
-    (function() {
-        var MINS = 5, total = MINS * 60;
-        var KEY = 'mm_upsell_timer_end';
-        var stored = localStorage.getItem(KEY);
-        var end;
 
-        if (stored) {
-        end = parseInt(stored, 10);
-        } else {
-        end = Date.now() + total * 1000;
-        localStorage.setItem(KEY, end);
-        }
-
-        function tick() {
-        var left = Math.max(0, Math.round((end - Date.now()) / 1000));
-        var m = Math.floor(left / 60), s = left % 60;
-        var em = document.getElementById('tm');
-        var es = document.getElementById('ts');
-        if (em) em.textContent = String(m).padStart(2, '0');
-        if (es) es.textContent = String(s).padStart(2, '0');
-        if (left > 0) setTimeout(tick, 1000);
-        /* si llegó a 0 se queda en 00:00 y no vuelve a correr */
-        }
-        tick();
-    })();
-    </script>
 
 
 </body>
