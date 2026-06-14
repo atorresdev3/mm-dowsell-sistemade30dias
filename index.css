@@ -1,0 +1,593 @@
+    /* ============================================================
+    MENTES MAESTRAS — DOWNSELL PAGE
+    CSS puro · Zero frameworks · Ultra rápido
+    ============================================================ */
+
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── TOKENS ── */
+    :root {
+    --red:        #e03e2d;
+    --red-dark:   #9b1c0e;
+    --red-glow:   rgba(224, 62, 45, .22);
+    --gold:       #d4a843;
+    --gold-dim:   rgba(212, 168, 67, .12);
+    --bg:         #070707;
+    --bg2:        #0f0f0f;
+    --bg3:        #161616;
+    --border:     rgba(255,255,255,.06);
+    --border-red: rgba(224, 62, 45, .28);
+    --text:       #f0f0f0;
+    --text2:      #999;
+    --text3:      #555;
+    --font-d:     'Oswald', sans-serif;
+    --font-b:     'Inter', sans-serif;
+    --side:       20px;
+    --max:        640px;
+    --r:          12px;
+    }
+
+    /* ── BASE ── */
+    html {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-b);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
+    }
+
+    body {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding-top: 0;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ─────────────────────────────────────────
+    BANDA SUPERIOR — SEGUNDA OPORTUNIDAD
+    ───────────────────────────────────────── */
+    body::before {
+    content: '⚠  ÚLTIMA OPORTUNIDAD — Esta oferta desaparece cuando cierres esta página';
+    display: block;
+    background: linear-gradient(90deg, #7a0f06, var(--red-dark), #7a0f06);
+    color: #ffd6d2;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-align: center;
+    padding: 10px var(--side);
+    animation: band-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes band-pulse {
+    0%,100% { opacity: 1; }
+    50%      { opacity: .85; }
+    }
+
+    /* ─────────────────────────────────────────
+    HERO
+    ───────────────────────────────────────── */
+    .ds2-wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 40px auto 0;
+    padding: 0 var(--side);
+    text-align: center;
+    animation: fade-up .7s ease both;
+    }
+
+    .ds2-tag {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    }
+
+    .ds2-h1 {
+    font-family: var(--font-d);
+    font-size: clamp(26px, 8vw, 44px);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    }
+
+    .ds2-h1 span {
+    color: var(--red);
+    display: block;
+    -webkit-text-stroke: .5px rgba(224,62,45,.3);
+    }
+
+    .ds2-sub {
+    font-size: clamp(13px, 3.8vw, 15px);
+    color: var(--text2);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 12px;
+    }
+
+    .ds2-sub + p {
+    font-size: clamp(13px, 3.8vw, 15px);
+    color: var(--text);
+    font-weight: 600;
+    padding: 0 var(--side);
+    }
+
+    /* ─────────────────────────────────────────
+    LISTA DE CONSECUENCIAS (con ✘)
+    ───────────────────────────────────────── */
+    .ds2-list {
+    list-style: none;
+    max-width: var(--max);
+    margin: 24px auto;
+    padding: 0 var(--side);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+
+    .ds2-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, #0e0404, #111);
+    border: 1px solid rgba(224,62,45,.18);
+    border-left: 3px solid var(--red-dark);
+    border-radius: var(--r);
+    text-align: left;
+    transition: border-color .2s, background .2s, transform .2s;
+    animation: fade-up .6s ease both;
+    }
+
+    .ds2-list li:nth-child(1) { animation-delay: .05s; }
+    .ds2-list li:nth-child(2) { animation-delay: .12s; }
+    .ds2-list li:nth-child(3) { animation-delay: .19s; }
+
+    .ds2-list li:hover {
+    border-color: rgba(224,62,45,.4);
+    background: #150505;
+    transform: translateX(3px);
+    }
+
+    .ds2-check {
+    width: 26px; height: 26px; min-width: 26px;
+    background: linear-gradient(135deg, #6b0e06, #9b1c0e);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 1px;
+    box-shadow: 0 2px 10px rgba(224,62,45,.3);
+    }
+
+    .ds2-title {
+    font-size: clamp(13px, 3.5vw, 14px);
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.45;
+    }
+
+    .ds2-sub2 {
+    font-size: clamp(12px, 3.2vw, 13px);
+    color: var(--text2);
+    line-height: 1.55;
+    margin-top: 3px;
+    }
+
+    /* ─────────────────────────────────────────
+    CAJA DE TEXTO / SEGUNDA OPORTUNIDAD
+    ───────────────────────────────────────── */
+    .ds2-textbox {
+    box-sizing: border-box;
+    width: calc(100% - var(--side)*2);
+    max-width: var(--max);
+    margin: 0 auto 28px;
+    padding: 28px 24px;
+    background: linear-gradient(135deg, #0b0b0b, #131313);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--gold);
+    border-radius: var(--r);
+    text-align: center;
+    animation: fade-up .8s .2s ease both;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .ds2-textbox::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 200px; height: 80px;
+    background: radial-gradient(ellipse, rgba(212,168,67,.08), transparent 70%);
+    pointer-events: none;
+    }
+
+    .ds2-textbox p {
+    font-size: clamp(13px, 3.8vw, 15px);
+    color: var(--text2);
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+    }
+
+    .ds2-textbox strong { color: var(--text); font-weight: 700; }
+
+    .ds2-highlight {
+    color: var(--red);
+    font-weight: 700;
+    font-size: 1.1em;
+    }
+
+    /* ─────────────────────────────────────────
+    MOCKUP
+    ───────────────────────────────────────── */
+    .mockup-container {
+    position: relative;
+    display: block;
+    margin: 0 auto 28px;
+    overflow: hidden;
+    border-radius: 10px;
+    max-width: 390px;
+    width: calc(100% - var(--side)*2);
+    }
+
+    /* Glow detrás del mockup */
+    .mockup-container::before {
+    content: '';
+    position: absolute;
+    inset: 15% 5%;
+    background: radial-gradient(ellipse, rgba(224,62,45,.2), transparent 70%);
+    filter: blur(20px);
+    pointer-events: none;
+    animation: glow-breathe 3s ease-in-out infinite;
+    z-index: 0;
+    }
+
+    .mockup-flotante {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    animation: flotar 4s ease-in-out infinite;
+    }
+
+    /* Destello de luz */
+    .mockup-container::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -150%;
+    width: 50%; height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.55) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-22deg);
+    animation: brillar 4.5s ease-in-out infinite;
+    z-index: 2;
+    }
+
+    @keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+    }
+
+    @keyframes brillar {
+    0%   { left: -150%; }
+    28%  { left: 160%; }
+    100% { left: 160%; }
+    }
+
+    @keyframes glow-breathe {
+    0%,100% { opacity: .6; transform: scale(1); }
+    50%      { opacity: 1; transform: scale(1.08); }
+    }
+
+    /* ─────────────────────────────────────────
+    PRECIO
+    ───────────────────────────────────────── */
+    .ds2-price {
+    box-sizing: border-box;
+    width: calc(100% - var(--side)*2);
+    max-width: var(--max);
+    margin: 0 auto 28px;
+    padding: 36px 28px;
+    background: linear-gradient(160deg, #100505, #0b0b0b);
+    border: 1px solid var(--border-red);
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fade-up .8s .1s ease both;
+    }
+
+    .ds2-price::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 240px; height: 120px;
+    background: radial-gradient(ellipse, rgba(224,62,45,.15), transparent 65%);
+    pointer-events: none;
+    animation: glow-breathe 2.5s ease-in-out infinite;
+    }
+
+    .ds2-price-label {
+    font-size: 11px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    }
+
+    .ds2-price-old {
+    font-size: 15px;
+    color: var(--text3);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 1;
+    }
+
+    .ds2-price-prev {
+    font-size: 15px;
+    color: var(--text3);
+    text-decoration: line-through;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    }
+
+    /* Precio principal */
+    .ds2-price-num {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    font-family: var(--font-d);
+    font-size: clamp(64px, 18vw, 92px);
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+    animation: price-glow 2s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+    }
+
+    /* Badge de ahorro */
+    .ds2-price::after {
+    content: 'Ahorras $25 hoy — 86% de descuento';
+    display: block;
+    background: rgba(224,62,45,.13);
+    border: 1px solid rgba(224,62,45,.28);
+    color: #f08070;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    margin: 0 auto 14px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    }
+
+    .ds2-price-note {
+    font-size: clamp(12px, 3.2vw, 13px);
+    color: var(--text3);
+    font-style: italic;
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
+    }
+
+    @keyframes price-glow {
+    0%,100% { text-shadow: 0 0 24px rgba(224,62,45,.35); }
+    50%      { text-shadow: 0 0 52px rgba(224,62,45,.7); }
+    }
+
+    /* ─────────────────────────────────────────
+    TEMPORIZADOR
+    ───────────────────────────────────────── */
+    .ds2-timer {
+    box-sizing: border-box;
+    width: calc(100% - var(--side)*2);
+    max-width: var(--max);
+    margin: 0 auto 28px;
+    padding: 24px;
+    background: linear-gradient(135deg, #0d0000, #160404);
+    border: 1px solid var(--border-red);
+    border-radius: var(--r);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fade-up .8s .3s ease both;
+    }
+
+    .ds2-timer::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 200px; height: 80px;
+    background: radial-gradient(ellipse, rgba(224,62,45,.13), transparent 70%);
+    pointer-events: none;
+    }
+
+    .ds2-timer-label {
+    font-size: 12px;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    }
+
+    .ds2-timer-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+    }
+
+    .ds2-timer-block {
+    background: #1a0000;
+    border: 1px solid rgba(224,62,45,.35);
+    border-radius: 10px;
+    padding: 14px 28px;
+    min-width: 88px;
+    }
+
+    .ds2-timer-num {
+    font-family: var(--font-d);
+    font-size: clamp(40px, 11vw, 60px);
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+    animation: digit-pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes digit-pulse {
+    0%,100% { text-shadow: 0 0 16px rgba(224,62,45,.35); }
+    50%      { text-shadow: 0 0 36px rgba(224,62,45,.75); }
+    }
+
+    .ds2-timer-unit {
+    font-size: 10px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+    font-weight: 600;
+    }
+
+    .ds2-timer-sep {
+    font-family: var(--font-d);
+    font-size: clamp(32px, 9vw, 48px);
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: sep-blink 1s step-start infinite;
+    position: relative;
+    z-index: 1;
+    }
+
+    @keyframes sep-blink {
+    0%,100% { opacity: 1; }
+    50%      { opacity: 0; }
+    }
+
+    .ds2-timer-note {
+    font-size: clamp(12px, 3.2vw, 13px);
+    color: var(--text3);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    }
+
+    /* ─────────────────────────────────────────
+    FUNNEL HOTMART
+    ───────────────────────────────────────── */
+    .mm-funnel-wrap {
+    box-sizing: border-box;
+    width: calc(100% - var(--side)*2);
+    max-width: var(--max);
+    margin: 0 auto 48px;
+    background: linear-gradient(160deg, #0f0404, #0b0b0b);
+    border: 1px solid var(--border-red);
+    border-radius: 16px;
+    padding: 32px 24px;
+    animation: funnel-glow 2.5s ease-in-out infinite;
+    }
+
+    @keyframes funnel-glow {
+    0%,100% { box-shadow: 0 0 0 rgba(224,62,45,0); }
+    50%      { box-shadow: 0 0 40px rgba(224,62,45,.12); }
+    }
+
+    /* ─────────────────────────────────────────
+    FOOTER
+    ───────────────────────────────────────── */
+    .ds2-footer {
+    background: #000;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 20px var(--side);
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: .5px;
+    font-family: var(--font-b);
+    margin-top: auto;
+    }
+
+    /* ─────────────────────────────────────────
+    ANIMACIONES ENTRADA
+    ───────────────────────────────────────── */
+    @keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─────────────────────────────────────────
+    RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 430px) {
+    :root { --side: 16px; }
+
+    .ds2-timer-block { min-width: 70px; padding: 10px 16px; }
+    .ds2-timer-num   { font-size: 34px; }
+    .ds2-timer-sep   { font-size: 26px; }
+    .ds2-price       { padding: 28px 18px; }
+    .ds2-list li     { padding: 14px 14px; }
+    }
+
+    @media (max-width: 340px) {
+    :root { --side: 12px; }
+
+    .ds2-timer-block { min-width: 56px; padding: 8px 12px; }
+    .ds2-timer-num   { font-size: 26px; }
+    .ds2-price-num   { font-size: 52px !important; }
+    }
+
+    /* Accesibilidad */
+    @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+    }

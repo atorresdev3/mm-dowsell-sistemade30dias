@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ULTIMA OFERTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicon   -->
+    <!-- Navegadores de escritorio -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png">
+
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/favicon/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="theme-color" content="#1D2D42">
+
+    <meta name="msapplication-TileColor" content="#1D2D42">
+    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="ds2-wrap">
+        <span class="ds2-tag">UN MOMENTO</span>
+        <h1 class="ds2-h1">ESPERA, ANTES DE <span>IRTE...</span></h1>
+        <p class="ds2-sub">Entendemos que $7 quizás no era el momento. Pero lo que estás a punto de dejar ir puede ser la diferencia entre usar tu MegaPack 30 días seguidos y verlo olvidado en una carpeta.</p>
+        <br>
+        <P>Sin un sistema claro de qué hacer cada día es muy fácil terminar:</P>
+    </section>
+
+    <!-- LISTA DE BENEFICIOS -->
+    <ul class="ds2-list">
+        <li>
+            <div class="ds2-check">✘</div>
+            <div>
+                <div class="ds2-title">Abriendo las plantillas con emoción el primer día y abandonándolas al tercero
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="ds2-check">✘</div>
+            <div>
+                <div class="ds2-title">Sin saber en qué orden usarlas ni cómo sacarles el máximo provecho</div>
+            </div>
+        </li>
+
+        <li>
+            <div class="ds2-check">✘</div>
+            <div>
+                <div class="ds2-title">Con todas las herramientas pero sin resultados reales</div>
+            </div>
+        </li>
+    </ul>
+
+    <!-- CAJA DE TEXTO -->
+    <div class="ds2-textbox">
+        <p>No te estamos pidiendo que compres algo nuevo. Te estamos dando una <strong>segunda oportunidad</strong> de llevarte el sistema completo que convierte tus plantillas en resultados.. Esta vez a <span class="ds2-highlight">$4.00 USD</span>. Solo una decisión inteligente antes de cerrar esta página.</p>
+    </div>
+
+    <!-- Bloque de Visualización (Mockup) -->
+    <div class="mockup-container">
+        <img src="img/imagen.webp" alt="Mockup Producto" class="mockup-flotante">
+    </div>
+
+
+
+    <!-- PRECIO -->
+    <div class="ds2-price">
+        <div class="ds2-price-label">Tu precio en este momento</div>
+        <div class="ds2-price-old">Valor real: $29.00 USD</div>
+        <div class="ds2-price-prev">Precio anterior: $7.00 USD</div> <br>
+        <div class="ds2-price-num">$4.00</div>
+        <div class="ds2-price-note">Esta oferta desaparece cuando cierres esta página. No hay una tercera oportunidad.</div>
+    </div>
+
+    <!-- TEMPORIZADOR -->
+    <div class="ds2-timer">
+        <div class="ds2-timer-label">Esta oferta expira en</div>
+        <div class="ds2-timer-display">
+            <div class="ds2-timer-block">
+                <div class="ds2-timer-num" id="minutes">10</div>
+                <div class="ds2-timer-unit">Minutos</div>
+            </div>
+            <div class="ds2-timer-sep">:</div>
+            <div class="ds2-timer-block">
+                <div class="ds2-timer-num" id="seconds">00</div>
+                <div class="ds2-timer-unit">Segundos</div>
+            </div>
+        </div>
+        <div class="ds2-timer-note">Una vez que expire no podrás recuperar este precio.</div>
+    </div>
+
+
+    <div class="mm-funnel-wrap">
+        <div id="hotmart-sales-funnel"></div>
+    </div>
+
+    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+    <script>
+    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+    </script>
+
+    <footer class="ds2-footer">
+        Mentes Maestras © 2026 — Todos los derechos reservados
+    </footer>
+
+
+
+    <script>
+    (function() {
+    var MINS = 10, total = MINS * 60;
+    var stored = sessionStorage.getItem('mm_ds2_timer');
+    var end = stored ? parseInt(stored, 10) : Date.now() + total * 1000;
+    if (!stored) sessionStorage.setItem('mm_ds2_timer', end);
+
+    function tick() {
+    var left = Math.max(0, Math.round((end - Date.now()) / 1000));
+    var m = Math.floor(left / 60), s = left % 60;
+    var em = document.getElementById('minutes');
+    var es = document.getElementById('seconds');
+    if (em) em.textContent = String(m).padStart(2, '0');
+    if (es) es.textContent = String(s).padStart(2, '0');
+    if (left > 0) setTimeout(tick, 1000);
+    }
+    tick();
+    })();
+</script>
+
+
+</body>
+</html>
